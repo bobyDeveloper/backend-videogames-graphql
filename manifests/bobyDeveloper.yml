@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: codigyx
+  name: bobydeveloper
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bobyDeveloper
+      app: bobydeveloper
   template:
     metadata:
       labels:
-        app: bobyDeveloper
+        app: bobydeveloper
     spec:
       containers:
       - image: okteto.dev/bobydeveloper:latest
-        name: bobyDeveloper
+        name: bobydeveloper
         envFrom:
         - configMapRef:
-            name: bobyDeveloper-config
+            name: bobydeveloper-config
         livenessProbe:
           httpGet:
             path: /ht/
@@ -29,13 +29,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: bobyDeveloper
+  name: bobydeveloper
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
   type: ClusterIP  
   ports:
-  - name: "bobyDeveloper"
+  - name: "bobydeveloper"
     port: 8080
   selector:
-    app: bobyDeveloper
+    app: bobydeveloper

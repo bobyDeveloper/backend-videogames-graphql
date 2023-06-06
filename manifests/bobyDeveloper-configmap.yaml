@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
- name: bobyDeveloper-config
+ name: bobydeveloper-config
  labels:
    app: postgres
 data:
