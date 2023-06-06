@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: bobyDeveloper-config
+ labels:
+   app: postgres
+data:
+ PROD_SECRET_KEY: i-love-adsoft-dev
+ PROD_DATABASE: ytkoacml
+ PROD_USER: ytkoacml
+ PROD_PASSWORD: 4XNskWlPyBhykPbJpVWOCEgnB_cHukVN
+ PROD_HOST: isilo.db.elephantsql.com
+ PROD_PORT: "5432"

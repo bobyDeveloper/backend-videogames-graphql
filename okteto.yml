@@ -1,0 +1,12 @@
+build:
+ bobyDeveloper:  # cambiar por su namespace de okteto
+   image: okteto.dev/bobydeveloper:latest  # cambiar por su namespace de okteto
+
+deploy:
+ - okteto build # build the image with the latest code
+ - kubectl apply -f manifests # create all the resources in kubernetes
+dev:
+ bobyDeveloper:
+   command: bash
+   sync:
+   - .:/videogames   # cambiar por su proyecto
